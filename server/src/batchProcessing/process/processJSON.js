@@ -1,38 +1,25 @@
 import fs from "fs";
 import csv from "csv-parser";
+import path from "path";
+import url from "url";
 
-async function main(outputFilePath) {
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+async function processJSONMain(outputFilePath) {
   let data = [];
 
-  const stationList = getStationList("../../data/stationCodes.json");
-  const dow = ["MON", "WED", "FRI"];
-  const time = ["08", "13"];
+  const stationList = getStationList(path.join(__dirname, "..", "..", "data", "stationCodes.json"));
+  const dow = ["MON", "WED", "FRI", "SAT"];
+  const time = ["08", "13", "18"];
   let getOffCountByTime;
 
   // 하차인원 CSV 읽어오기
   const headers = [
-    "stationName",
-    "dow",
-    "b06",
-    "h06",
-    "h07",
-    "h08",
-    "h09",
-    "h10",
-    "h11",
-    "h12",
-    "h13",
-    "h14",
-    "h15",
-    "h16",
-    "h17",
-    "h18",
-    "h19",
-    "h20",
-    "h21",
-    "h22",
-    "h23",
-    "a24",
+    "stationName", "dow", "b06", "h06", "h07",
+    "h08", "h09", "h10", "h11", "h12",
+    "h13", "h14", "h15", "h16", "h17",
+    "h18", "h19", "h20", "h21", "h22",
+    "h23", "a24",
   ];
   const getOffCSV = await readCSV(headers);
 
@@ -47,11 +34,11 @@ async function main(outputFilePath) {
         getOffCountByTime = getOffCSV.find((x) => x.stationName == station && x.dow == dow)[searchTime];
 
         // 혼잡도
-        const CongestionData = getJSONData(`../data/input/apiResponses/혼잡_${station}_${dow}_${time}.json`);
+        const CongestionData = getJSONData(path.join(__dirname, "..", "data", "input", "apiResponses", `혼잡_${station}_${dow}_${time}.json`));
         const CongestionGroups = groupData(CongestionData, "congestionCar");
 
         // 하차 비율
-        const GetOffData = getJSONData(`../data/input/apiResponses/하차_${station}_${dow}_${time}.json`);
+        const GetOffData = getJSONData(path.join(__dirname, "..", "data", "input", "apiResponses", `하차_${station}_${dow}_${time}.json`));
         const GetOffGroups = groupData(GetOffData, "getOffCarRate");
 
         // 최종 예측 인원
@@ -62,14 +49,24 @@ async function main(outputFilePath) {
     });
     data.push({ stationName: station, train: trains });
   });
-  const output = { data: data };
+  const output = data;
   saveDataToFile(output, outputFilePath);
 }
 
 // 데이터를 파일로 저장하는 함수
-function saveDataToFile(data, filePath) {
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+function saveDataToFile(data, outputFilePath) {
+  const replacer = (key, value) => 
+    (key === 'estimatedCount' && Array.isArray(value)) ? JSON.stringify(value) : value;
+  
+  const output = JSON.stringify(data, replacer, 2)
+    .replace(/\\n/g, '')
+    .replace(/\\/g, '')
+    .replace(/\"\[/g, '[')
+    .replace(/\]\"/g, ']');
+
+  fs.writeFileSync(outputFilePath, output);
 }
+
 
 // 데이터를 그룹화하는 함수(시간대 별로 열차 모음)
 function groupData(group, standard) {
@@ -129,9 +126,6 @@ function processCongestion(dow, getOffCountByTime, getOffGroup, congestionGroup)
   return train;
 }
 
-main("../data/output/processJSONResult.json");
-
-// ==========
 // stationList 불러오기
 function getStationList(filePath) {
   const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -143,7 +137,7 @@ function readCSV(headers) {
   const result = [];
 
   return new Promise((resolve, reject) => {
-    fs.createReadStream("../data/input/getOffCount.csv")
+    fs.createReadStream(path.join(__dirname, "..", "data", "input", "getOffCount.csv"))
       .pipe(csv({ headers, skipLines: 1 }))
       .on("data", (data) => result.push(data))
       .on("end", () => {
@@ -186,3 +180,5 @@ function calculateMedians(cars) {
     }
   });
 }
+
+export default processJSONMain;
