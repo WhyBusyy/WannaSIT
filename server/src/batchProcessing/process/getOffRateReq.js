@@ -7,8 +7,8 @@ import url from "url";
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, "..", "..", "..", ".env") });
 const stationCodes = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "..", "data", "stationCodes.json"), "utf-8"));
-const dows = ["THU"];
-const hhs = ["19"];
+const dows = [];
+const hhs = [];
 const appKey = process.env.APP_KEY;
 
 const makeRequest = async (stationCode, dow, hh) => {
