@@ -30,19 +30,24 @@
 }
 
 .greenButton {
+    position: relative;
+    left: 0;
+    top: -16px;
     width: 310px;
     height: 44px;
     border-radius: 10px;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     font-size: 18px;
     background-color: #7ED287;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    line-height: 44px;
 }
 
 #tipText {
+    position: relative;
+    left: 0;
+    top: 24px;
     color: black;
     font-weight: bold;
     font-size: 18px;
@@ -52,6 +57,9 @@
 }
 
 #tipDetail {
+    position: relative;
+    left: 0;
+    top: -36px;
     color: black;
     font-weight: normal;
     font-size: 12px;
