@@ -25,9 +25,9 @@ async function getPostList(req, res) {
 
   try {
     const [totalPostCount] = await executeQuery(connection, totalPostQuery, [searchParams]);
-    const totalpageCount = Math.ceil(totalPostCount[0].cnt / 5);
+    const totalpageCount = Math.ceil(totalPostCount[0].cnt / 5) || 1;
 
-    if (pageNum > totalpageCount) throw err;
+    if (pageNum > totalpageCount) throw new Error("잘못된 페이지 번호입니다.");
 
     const [rows] = await executeQuery(connection, query, [searchParams, (pageNum - 1) * 5]);
     res.status(200).json({

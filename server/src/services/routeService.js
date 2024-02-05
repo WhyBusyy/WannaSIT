@@ -4,10 +4,7 @@ import { getConnection, executeQuery, endConnection } from "../services/database
 
 // 최근 경로 저장하는 함수
 async function saveRecentRoute(req, startStation, endStation) {
-  const recentRoutes = req.session.recentRoutes;
-  if (!recentRoutes) {
-    recentRoutes = [];
-  }
+  const recentRoutes = req.session.recentRoutes || [];
 
   // 최근 검색 경로 중복 방지
   const isLatestRoute = recentRoutes[0].startStation === startStation && recentRoutes[0].endStation === endStation;
@@ -18,6 +15,7 @@ async function saveRecentRoute(req, startStation, endStation) {
       recentRoutes.pop();
     }
   }
+  req.session.recentRoutes = recentRoutes;
 }
 
 // 출발/도착역에 따른 경로, 내외선 방향 계산 함수

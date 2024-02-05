@@ -9,7 +9,7 @@ function getStations(req, res) {
 
 function getRecentRoutes(req, res) {
   if (!req.session.recentRoutes) {
-    res.status(404).send("Recent routes not found");
+    res.json([]);
   } else {
     res.json(req.session.recentRoutes);
   }

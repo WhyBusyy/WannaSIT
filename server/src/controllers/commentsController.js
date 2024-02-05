@@ -25,18 +25,18 @@ async function getCommentList(req, res) {
 
   try {
     const [totalCommentCount] = await executeQuery(connection, totalCommentQuery, [req.params.postID]);
-    const totalpageCount = Math.ceil(totalCommentCount[0].cnt / 5);
+    const totalpageCount = Math.ceil(totalCommentCount[0].cnt / 5) || 1;
 
-    //달린 댓글이 없는 경우
-    if (!totalpageCount) {
-      res.status(200).json({
-        totalpageCount: 1,
-        data: [],
-      });
-      return;
-    }
+    // //달린 댓글이 없는 경우
+    // if (!totalpageCount) {
+    //   res.status(200).json({
+    //     totalpageCount: 1,
+    //     data: [],
+    //   });
+    //   return;
+    // }
 
-    if (pageNum > totalpageCount) throw err;
+    if (pageNum > totalpageCount) throw new Error("잘못된 페이지 번호입니다.");
 
     const [rows] = await executeQuery(connection, query, [req.params.postID, (pageNum - 1) * 5]);
     const data = [];
