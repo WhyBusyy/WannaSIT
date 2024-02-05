@@ -34,10 +34,6 @@
   
 }
 
-.commentList:first-child {
-  border-top:1px solid #C0EF52;
-}
-
 .commentList ul li:nth-child(1) {
   padding-top: 10px;
   font-weight: bold;
@@ -58,10 +54,11 @@
   display: flex;
   justify-content: right;
   align-items: center;
+  margin-top: -8px;
 }
 
 .commentList ul li:nth-child(4) img {
-  width: 16px;
+  width: 14px;
   margin-right: 3px;
   cursor: pointer;
 }

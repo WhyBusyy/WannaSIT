@@ -10,7 +10,7 @@ function Comment({ postID }) {
   const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [content, setContent] = useState('');
-
+  const [commentContWrap, setCommentContWrap] = useState(null);
 
   const handleKeyUp = (event) => {
     if (event.key === "Enter") {
@@ -25,7 +25,6 @@ function Comment({ postID }) {
     api.get(`posts/${postID}/comments?pageNum=${pageNum}`)
       .then(({ data }) => {
         const { data: responseData, totalPageCount } = data;
-        console.log(data);
         if (pageNum === 1) {
           setComments(responseData);
           setTotalPages(totalPageCount);
@@ -53,18 +52,26 @@ function Comment({ postID }) {
 
       if (response.data.message === "댓글 등록 성공") {
         setContent('');
-        fetchComments(pageNum);
+        setPageNum(1);
+
+        if (commentContWrap) {
+          commentContWrap.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+        }
       }
     } catch (error) {
       console.error('댓글 쓰기 오류:', error.message);
     }
+
   };
 
   const handleLikeClick = (commentID) => {
     const copyComments = [...comments]
     const currentCommentIndex = copyComments.findIndex((comment) => comment.id === commentID);
     const currentIsLiked = copyComments[currentCommentIndex].isLiked;
-    console.log('현재 추천 상태:',currentIsLiked);
+    console.log('현재 추천 상태:', currentIsLiked);
 
     api.put(`/posts/${postID}/comments/${commentID}/like`)
       .then((response) => {
@@ -75,7 +82,7 @@ function Comment({ postID }) {
             isLiked: currentIsLiked + 1,
             likeCount: copyComments[currentCommentIndex].likeCount + 1,
           };
-          
+
           // 업데이트된 배열을 상태로 설정
           setComments([...copyComments]);
           console.log('요청 후 추천 상태', [...copyComments]);
@@ -105,6 +112,7 @@ function Comment({ postID }) {
       .then((response) => {
         if (response.data.message === "댓글 삭제 성공") {
           fetchComments(1);
+
         } else {
           console.error('댓글 삭제 실패');
           alert('삭제가 실패되었네영');
@@ -116,12 +124,14 @@ function Comment({ postID }) {
   };
 
   useEffect(() => {
-    const commentContWrap = document.querySelector('.commentContWrap');
+    const commentContWrapElement = document.querySelector('.commentContWrap');
+    setCommentContWrap(commentContWrapElement);
+
 
     const handleScroll = () => {
-      const scrollTop = commentContWrap.scrollTop;
-      const scrollHeight = commentContWrap.scrollHeight;
-      const clientHeight = commentContWrap.clientHeight;
+      const scrollTop = commentContWrapElement.scrollTop;
+      const scrollHeight = commentContWrapElement.scrollHeight;
+      const clientHeight = commentContWrapElement.clientHeight;
       const targetScrollPosition = scrollHeight - 10;
 
       if (scrollTop + clientHeight >= targetScrollPosition) {
@@ -131,10 +141,10 @@ function Comment({ postID }) {
       }
     };
 
-    commentContWrap.addEventListener('scroll', handleScroll);
+    commentContWrapElement.addEventListener('scroll', handleScroll);
 
     return () => {
-      commentContWrap.removeEventListener('scroll', handleScroll);
+      commentContWrapElement.removeEventListener('scroll', handleScroll);
     };
   }, [isLoading, pageNum, totalPages]);
 
@@ -150,10 +160,10 @@ function Comment({ postID }) {
                   <div className="titleAndDelWrap">
                     <li>{comment.username}</li>
                     {comment.isAuthor === 1 && (
-                    <li className="commentDelButton" onClick={() => handleDelete(comment.id)}>
-                      | 삭제
-                    </li>
-                  )}
+                      <li className="commentDelButton" onClick={() => handleDelete(comment.id)}>
+                        | 삭제
+                      </li>
+                    )}
                   </div>
                   <li>{comment.content}</li>
                   <li>{comment.creationDate}</li>
@@ -162,7 +172,7 @@ function Comment({ postID }) {
                     {comment.likeCount}
                   </li>
                 </ul>
-                
+
               </div>
             ))
           ) : (
@@ -186,7 +196,3 @@ function Comment({ postID }) {
 }
 
 export default Comment;
-
-
-
-

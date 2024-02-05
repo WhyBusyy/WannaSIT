@@ -88,12 +88,13 @@
     display: flex;
     justify-content: flex-start;
     font-size: 14px;
+    border-bottom: 1px solid #C0EF52;
 }
 
 .likeAndCommentWrap .boardDetailLike,
 .likeAndCommentWrap .replies {
     margin: 0;
-    padding: 14px 0 4px 0;
+    padding: 14px 0 6px 0;
     cursor: pointer;
 }
 
