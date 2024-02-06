@@ -82,7 +82,7 @@ async function getRouteDetail(route, direction) {
     const params = [station, direction, arrivalDay, arrivalHour, arrivalMin];
     const [rows, fields] = await executeQuery(connection, query, params);
 
-    routeInfo.push(rows);
+    routeInfo.push(...rows);
 
     actualMin += direction ? rows[0].next_station_time / 60 : rows[0].prev_station_time / 60;
 

@@ -6,7 +6,7 @@ const MAX_PERCENTAGE_COUNT = TOTAL_SEATS - 20;
 
 // 랭킹 계산 함수
 function calculateRanking(routeDetail) {
-  const countByCar = gatherCountByCar(routeDetail); // 두번째 ERD로 할 경우 이 과정 생략
+  const countByCar = gatherCountByCar(routeDetail); // 호차별로 예측인원 모으기
   const bestByCar = findBestByCar(countByCar);
 
   sortRanking(bestByCar);
@@ -53,19 +53,19 @@ async function determineHighTraffic(routeDetail) {
   const traffic = [];
   const connection = await getConnection();
   const query = `
-	SELECT get_off_count 
-	FROM train 
-	WHERE direction=0 AND arrival_day=? AND arrival_hour=? AND arrival_min=0 
-	ORDER BY get_off_count DESC 
+	SELECT stats.get_off_count 
+	FROM statistics stats JOIN train t ON stats.train_id = t.id
+	WHERE t.direction=0 AND t.arrival_day=? AND t.arrival_hour=? AND t.arrival_min=0 
+	ORDER BY stats.get_off_count DESC 
 	LIMIT 1 OFFSET 14;`;
 
   await Promise.all(
     routeDetail.map(async (route) => {
-      const params = [route[0].arrival_day, route[0].arrival_hour];
+      const params = [route.arrival_day, route.arrival_hour];
       const [rows, fields] = await executeQuery(connection, query, params);
-      const getOffThreshold = rows[0].get_off_count; // 해당 시간대 상위 15등에 해당하는 값
+      const getOffThreshold = rows.get_off_count; // 해당 시간대 상위 15등에 해당하는 값
 
-      if (route[0].get_off_count >= getOffThreshold) traffic.push(1);
+      if (route.get_off_count >= getOffThreshold) traffic.push(1);
       else traffic.push(0);
     })
   );
@@ -91,9 +91,15 @@ function findHighCars(routeDetail) {
   return highCars;
 }
 
-// 경로까지 호차 별 예측 인원 모으는 함수
-function gatherCountByCar(routeData) {
-  return Array.from({ length: routeData[0].length }, (_, index) => routeData.map((station) => station[index].estimated_count));
+// 호차 추천 위한 호차별 인원 모으는 함수
+function gatherCountByCar(routeDetail) {
+  // estimated_count 모으기
+  const estimatedCounts = routeDetail.map((detail) => detail.estimated_count);
+
+  // 호차끼리 모으기
+  const countByCar = estimatedCounts[0].map((_, i) => estimatedCounts.map((counts) => counts[i]));
+
+  return countByCar;
 }
 
 // 호차 별 착석 가능성 높은 역 찾는 함수
