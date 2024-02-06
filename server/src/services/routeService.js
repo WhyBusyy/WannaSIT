@@ -7,7 +7,7 @@ async function saveRecentRoute(req, startStation, endStation) {
   const recentRoutes = req.session.recentRoutes || [];
 
   // 최근 검색 경로 중복 방지
-  const isLatestRoute = recentRoutes[0].startStation === startStation && recentRoutes[0].endStation === endStation;
+  const isLatestRoute = recentRoutes[0]?.startStation === startStation && recentRoutes[0]?.endStation === endStation;
 
   if (!isLatestRoute) {
     recentRoutes.unshift({ startStation, endStation });
