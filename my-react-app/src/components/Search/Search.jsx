@@ -10,8 +10,7 @@ function Search() {
   const [startStationValue, setStartStationValue] = useState("");
   const [endStationValue, setEndStationValue] = useState("");
   const [stations, setStations] = useState([]);
-  const [startSearchHistory, setStartSearchHistory] = useState([]);
-  const [endSearchHistory, setEndSearchHistory] = useState([]);
+  const [searchHistory, setSearchHistory] = useState([]);
   const [showStartList, setShowStartList] = useState(false);
   const [showEndList, setShowEndList] = useState(false);
   const [selectedOption, setSelectedOption] = useState("전체 ");
@@ -63,9 +62,7 @@ function Search() {
   };
 
   const startSearched =
-    startStationValue.length === 0
-      ? startSearchHistory
-      : startStationValue.length >= 1
+    startStationValue.length >= 1
       ? stations.filter(
           (station) =>
             station.includes(startStationValue) ||
@@ -74,9 +71,7 @@ function Search() {
       : [];
 
   const endSearched =
-    endStationValue.length === 0
-      ? endSearchHistory
-      : endStationValue.length >= 1
+    endStationValue.length >= 1
       ? stations.filter(
           (station) =>
             station.includes(endStationValue) ||
@@ -136,12 +131,9 @@ function Search() {
 
     api
       .get("/stations/recent-routes")
-      .then((response) => response.data)
-      .then((data) => {
-        const startStations = data.map((item) => item.startStation);
-        const endStations = data.map((item) => item.endStation);
-        setStartSearchHistory(startStations);
-        setEndSearchHistory(endStations);
+      .then((response) => {
+        setSearchHistory(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -150,7 +142,12 @@ function Search() {
 
   return (
     <div className="Search">
-      <form action="/cars" method="GET" id="stationSearchForm">
+      <form
+        action="/cars"
+        method="GET"
+        id="stationSearchForm"
+        autocomplete="off"
+      >
         <div className="inputBox">
           <input
             type="text"
@@ -189,6 +186,23 @@ function Search() {
             required
           ></input>
         </div>
+        {showStartList && startSearched.length === 0 && (
+          <div className="searchResultList">
+            {searchHistory.map((item, index) => (
+              <li
+                className="startResult"
+                key={index + item}
+                onClick={() => {
+                  startResultClick(item.startStation);
+                  endResultClick(item.endStation);
+                }}
+              >
+                {item.startStation}&nbsp;&rarr;&nbsp;
+                {item.endStation}
+              </li>
+            ))}
+          </div>
+        )}
         {showStartList && startSearched.length >= 1 && (
           <div className="searchResultList">
             {startSearched.map((item, index) => (
@@ -198,6 +212,23 @@ function Search() {
                 onClick={() => startResultClick(item)}
               >
                 {item}
+              </li>
+            ))}
+          </div>
+        )}
+        {showEndList && endSearched.length === 0 && (
+          <div className="searchResultList">
+            {searchHistory.map((item, index) => (
+              <li
+                className="endResult"
+                key={index + item}
+                onClick={() => {
+                  startResultClick(item.startStation);
+                  endResultClick(item.endStation);
+                }}
+              >
+                {item.startStation}&nbsp;&rarr;&nbsp;
+                {item.endStation}
               </li>
             ))}
           </div>
