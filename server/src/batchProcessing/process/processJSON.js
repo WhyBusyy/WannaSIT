@@ -9,8 +9,8 @@ async function processJSONMain(outputFilePath) {
   let data = [];
 
   const stationList = getStationList(path.join(__dirname, "..", "..", "data", "stationCodes.json"));
-  const dow = ["MON", "WED", "FRI", "SAT"];
-  const time = ["08", "13", "18"];
+  const dow = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const time = ["07", "08", "09", "13", "17", "18", "19"];
   let getOffCountByTime;
 
   // 하차인원 CSV 읽어오기
