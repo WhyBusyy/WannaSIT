@@ -4,7 +4,7 @@ import "./Comment.css";
 import strokeLike from "../../assets/images/icon/strokeLike.svg";
 import fillLike from "../../assets/images/icon/fillLike.svg";
 
-function Comment({ postID }) {
+function Comment({ postID, fetchBoardDetail }) {
   const [comments, setComments] = useState([]);
   const [pageNum, setPageNum] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -43,6 +43,11 @@ function Comment({ postID }) {
 
   const handleCommentRegistration = async () => {
     try {
+      const trimContent = content.trim();
+      if (trimContent === "") {
+        return;
+      }
+
       const formData = { content };
       const response = await api.post(`posts/${postID}/comments`, formData, {
         headers: {
@@ -53,6 +58,8 @@ function Comment({ postID }) {
       if (response.data.message === "댓글 등록 성공") {
         setContent('');
         setPageNum(1);
+        fetchComments(pageNum);
+        fetchBoardDetail();
 
         if (commentContWrap) {
           commentContWrap.scrollTo({
@@ -112,6 +119,7 @@ function Comment({ postID }) {
       .then((response) => {
         if (response.data.message === "댓글 삭제 성공") {
           fetchComments(1);
+          fetchBoardDetail();
 
         } else {
           console.error('댓글 삭제 실패');

@@ -27,7 +27,7 @@ function BoardEdit() {
             .then((response) => {
                 if (response.data.message === "게시글 수정 성공") {
                     setModalOpen(false); // 수정 후 모달 닫기
-                    navigate('/boards');
+                    navigate(`/boards/${postID}`);
                 }
             })
             .catch((error) => {

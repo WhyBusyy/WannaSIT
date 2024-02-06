@@ -23,19 +23,23 @@ function BoardDetail() {
     setBoardMenuList(!boardMenuList);
   };
 
-  useEffect(() => {
+  const fetchBoardDetail = () => {
     api.get(`/posts/${postID}`)
-      .then((response) => {
-        console.log(response.data);
-        setBoardData(response.data);
-        setIsAuthor(response.data.isAuthor);
-        setIsLiked(response.data.isLiked);
-        setLikeCount(response.data.likeCount);
-        setCommentCount(response.data.commentCount);
-      })
-      .catch((error) => {
-        console.error('API 호출 에러:', error);
-      });
+    .then((response) => {
+      console.log(response.data);
+      setBoardData(response.data);
+      setIsAuthor(response.data.isAuthor);
+      setIsLiked(response.data.isLiked);
+      setLikeCount(response.data.likeCount);
+      setCommentCount(response.data.commentCount);
+    })
+    .catch((error) => {
+      console.error('API 호출 에러:', error);
+    });
+  }
+  
+  useEffect(() => {
+    fetchBoardDetail();
   }, [postID]); // boardId가 변경될 때마다 API 호출
 
 
@@ -118,7 +122,7 @@ function BoardDetail() {
               {commentCount}
             </p>
           </div>
-          <Comment postID={postID} />
+          <Comment postID={postID} fetchBoardDetail={fetchBoardDetail} />
         </div>
       ) : (
         <p>Loading...</p>
