@@ -47,17 +47,10 @@ function Board() {
   useEffect(() => {
     const boardCont = document.querySelector('.boardCont');
     const handleScroll = () => {
-      // boardCont 요소의 현재 수직 스크롤 위치
       const scrollTop = boardCont.scrollTop;
-      console.log('현재스크롤위치:',scrollTop)
-      // 스크롤 가능한 콘텐츠 총 높이 boardCont 전체 총 높이 가려진 것 포함
       // const scrollHeight = boardCont.scrollHeight;
-      // boardCont 요소 내의 보이는 콘텐츠 영역 높이
       const clientHeight = boardCont.clientHeight;
-      console.log('내용보이는높이:',clientHeight);
-      // 총 스크롤 높이 빼기 10픽셀
-      const targetScrollPosition = clientHeight * 0.1;
-      console.log('이벤트되는지점:',targetScrollPosition);
+      const targetScrollPosition = clientHeight - 10;
 
       if (scrollTop + clientHeight >= targetScrollPosition) {
         if (!isLoading && pageNum < totalPages) {

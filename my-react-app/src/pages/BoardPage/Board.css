@@ -1,6 +1,6 @@
 .boardCont {
   width: 390px;
-  height: 60vh;
+  height: 550px;
   overflow: auto;
   margin: 0 auto;
   margin-top: 40px;
@@ -72,14 +72,14 @@
 }
 
 .boardListWrap ul li:nth-child(2) {
+  width: 350px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   font-size: 14px;
 }
 
 .boardListWrap ul li:nth-child(3) {
-  width: 340px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
   font-size: 14px;
   color: #B5B5B5;
 }
