@@ -1,0 +1,2068 @@
+{
+  "status": {
+    "code": "00",
+    "message": "success",
+    "totalCount": 1
+  },
+  "contents": {
+    "subwayLine": "2호선",
+    "stationName": "강변역",
+    "stationCode": "214",
+    "stat": [
+      {
+        "startStationCode": "202",
+        "startStationName": "을지로입구역",
+        "endStationCode": "211",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "202",
+        "startStationName": "을지로입구역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "202",
+        "endStationName": "을지로입구역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              9,
+              6,
+              8,
+              8,
+              11,
+              18,
+              9,
+              13,
+              9,
+              9
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              8,
+              7,
+              7,
+              9,
+              11,
+              19,
+              9,
+              13,
+              9,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              7,
+              8,
+              10,
+              11,
+              19,
+              10,
+              13,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              6,
+              6,
+              8,
+              9,
+              10,
+              19,
+              10,
+              14,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              7,
+              8,
+              10,
+              10,
+              18,
+              10,
+              13,
+              11,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              6,
+              6,
+              7,
+              10,
+              11,
+              18,
+              10,
+              14,
+              11,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "211",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              10,
+              13,
+              14,
+              18,
+              10,
+              8,
+              7,
+              8,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              6,
+              11,
+              13,
+              13,
+              18,
+              9,
+              8,
+              7,
+              9,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "211",
+        "endStationName": "성수역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              10,
+              6,
+              8,
+              10,
+              12,
+              15,
+              8,
+              14,
+              9,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              8,
+              8,
+              6,
+              11,
+              11,
+              18,
+              9,
+              14,
+              8,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              8,
+              6,
+              13,
+              12,
+              17,
+              9,
+              13,
+              8,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              9,
+              5,
+              12,
+              11,
+              18,
+              9,
+              14,
+              8,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              9,
+              5,
+              12,
+              11,
+              17,
+              9,
+              14,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              9,
+              6,
+              12,
+              11,
+              18,
+              8,
+              14,
+              9,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              7,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              11,
+              14,
+              13,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              8,
+              11,
+              13,
+              12,
+              19,
+              9,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              8,
+              6,
+              8,
+              9,
+              11,
+              19,
+              9,
+              13,
+              10,
+              9
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              7,
+              6,
+              7,
+              9,
+              11,
+              20,
+              9,
+              14,
+              9,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              6,
+              8,
+              9,
+              10,
+              19,
+              10,
+              14,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              6,
+              5,
+              8,
+              8,
+              9,
+              20,
+              10,
+              15,
+              11,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              5,
+              8,
+              9,
+              9,
+              20,
+              10,
+              14,
+              11,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              6,
+              4,
+              8,
+              9,
+              10,
+              20,
+              10,
+              15,
+              11,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "219",
+        "endStationName": "삼성역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              9,
+              6,
+              8,
+              8,
+              11,
+              18,
+              9,
+              13,
+              9,
+              9
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              8,
+              7,
+              7,
+              9,
+              11,
+              19,
+              9,
+              13,
+              9,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              7,
+              8,
+              10,
+              11,
+              19,
+              10,
+              13,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              6,
+              6,
+              8,
+              9,
+              10,
+              19,
+              10,
+              14,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              7,
+              8,
+              10,
+              10,
+              18,
+              10,
+              13,
+              11,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              6,
+              6,
+              7,
+              10,
+              11,
+              18,
+              10,
+              14,
+              11,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "228",
+        "endStationName": "서울대입구역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              9,
+              6,
+              8,
+              8,
+              11,
+              18,
+              9,
+              13,
+              9,
+              9
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              8,
+              7,
+              7,
+              9,
+              11,
+              19,
+              9,
+              13,
+              9,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              7,
+              8,
+              10,
+              11,
+              19,
+              10,
+              13,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              6,
+              6,
+              8,
+              9,
+              10,
+              19,
+              10,
+              14,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              7,
+              8,
+              10,
+              10,
+              18,
+              10,
+              13,
+              11,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              6,
+              6,
+              7,
+              10,
+              11,
+              18,
+              10,
+              14,
+              11,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "234",
+        "endStationName": "신도림역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              10,
+              6,
+              9,
+              8,
+              12,
+              18,
+              8,
+              12,
+              9,
+              9
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              9,
+              7,
+              8,
+              9,
+              12,
+              19,
+              8,
+              12,
+              8,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              8,
+              7,
+              8,
+              10,
+              11,
+              19,
+              9,
+              12,
+              9,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              6,
+              8,
+              9,
+              10,
+              20,
+              10,
+              14,
+              10,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              7,
+              8,
+              10,
+              10,
+              18,
+              10,
+              14,
+              11,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              5,
+              6,
+              7,
+              10,
+              10,
+              18,
+              10,
+              14,
+              11,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "211",
+        "startStationName": "성수역",
+        "endStationCode": "239",
+        "endStationName": "홍대입구역",
+        "prevStationCode": "213",
+        "prevStationName": "구의역",
+        "updnLine": 1,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              9,
+              6,
+              8,
+              8,
+              11,
+              18,
+              9,
+              13,
+              9,
+              9
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              8,
+              7,
+              7,
+              9,
+              11,
+              19,
+              9,
+              13,
+              9,
+              8
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              7,
+              7,
+              8,
+              10,
+              11,
+              19,
+              10,
+              13,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              6,
+              6,
+              8,
+              9,
+              10,
+              19,
+              10,
+              14,
+              10,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              6,
+              7,
+              8,
+              10,
+              10,
+              18,
+              10,
+              13,
+              11,
+              7
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              6,
+              6,
+              7,
+              10,
+              11,
+              18,
+              10,
+              14,
+              11,
+              7
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "219",
+        "startStationName": "삼성역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "228",
+        "startStationName": "서울대입구역",
+        "endStationCode": "211",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "228",
+        "startStationName": "서울대입구역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "234",
+        "startStationName": "신도림역",
+        "endStationCode": "211",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "234",
+        "startStationName": "신도림역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "239",
+        "startStationName": "홍대입구역",
+        "endStationCode": "211",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "startStationCode": "239",
+        "startStationName": "홍대입구역",
+        "endStationCode": "211-R",
+        "endStationName": "성수역",
+        "prevStationCode": "215",
+        "prevStationName": "잠실나루역",
+        "updnLine": 0,
+        "directAt": 0,
+        "data": [
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "00",
+            "getOffCarRate": [
+              6,
+              10,
+              14,
+              11,
+              19,
+              11,
+              8,
+              8,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "10",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              11,
+              8,
+              7,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "20",
+            "getOffCarRate": [
+              6,
+              11,
+              14,
+              12,
+              18,
+              10,
+              8,
+              8,
+              7,
+              5
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "30",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              13,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "40",
+            "getOffCarRate": [
+              7,
+              10,
+              14,
+              13,
+              19,
+              10,
+              8,
+              6,
+              7,
+              6
+            ]
+          },
+          {
+            "dow": "THU",
+            "hh": "19",
+            "mm": "50",
+            "getOffCarRate": [
+              7,
+              10,
+              13,
+              12,
+              19,
+              10,
+              8,
+              7,
+              7,
+              6
+            ]
+          }
+        ]
+      }
+    ],
+    "statStartDate": "20231103",
+    "statEndDate": "20240202"
+  }
+}

@@ -138,9 +138,9 @@ function Comment({ postID, fetchBoardDetail }) {
 
     const handleScroll = () => {
       const scrollTop = commentContWrapElement.scrollTop;
-      const scrollHeight = commentContWrapElement.scrollHeight;
+      // const scrollHeight = commentContWrapElement.scrollHeight;
       const clientHeight = commentContWrapElement.clientHeight;
-      const targetScrollPosition = scrollHeight - 10;
+      const targetScrollPosition = clientHeight - 10;
 
       if (scrollTop + clientHeight >= targetScrollPosition) {
         if (!isLoading && pageNum < totalPages) {

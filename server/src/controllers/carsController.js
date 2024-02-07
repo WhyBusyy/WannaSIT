@@ -28,12 +28,10 @@ async function info(req, res) {
   const result = [];
 
   routeDetail.forEach((route, index) => {
-    const { station_name, station_info, passenger_info } = route[0];
-
-    const station = station_name;
+    const station = route.station_name;
     const traffic = trafficArr[index];
-    const feature = station_info;
-    const character = passenger_info;
+    const feature = route.station_info;
+    const character = route.passenger_info;
     const tip = { feature, character };
     const chance = chanceByRoute[index];
     const highCars = highCarArr[index];

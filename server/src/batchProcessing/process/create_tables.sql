@@ -1,0 +1,49 @@
+CREATE TABLE IF NOT EXISTS station (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	station_name VARCHAR(10) NOT NULL,
+	prev_station_time SMALLINT NOT NULL,
+	next_station_time SMALLINT NOT NULL,
+	station_info TEXT,
+	passenger_info TEXT
+);
+
+CREATE TABLE IF NOT EXISTS train (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	station_id INT NOT NULL,
+	direction TINYINT NOT NULL,
+	arrival_day CHAR(3) NOT NULL,
+	arrival_hour TINYINT NOT NULL,
+	arrival_min TINYINT NOT NULL,
+	FOREIGN KEY (station_id)
+	REFERENCES station(id)
+);
+
+CREATE TABLE IF NOT EXISTS statistics (
+	train_id INT PRIMARY KEY,
+	estimated_count JSON NOT NULL,
+	get_off_count MEDIUMINT NOT NULL,
+	FOREIGN KEY (train_id)
+	REFERENCES train(id)
+);
+
+CREATE TABLE IF NOT EXISTS post (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	user_id CHAR(36) NOT NULL,
+	username VARCHAR(100) NOT NULL,
+	title VARCHAR(100) NOT NULL,
+	content VARCHAR(500) NOT NULL,
+	creation_date TIMESTAMP NOT NULL,
+	like_count MEDIUMINT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS comment (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	post_id INT NOT NULL,
+	user_id CHAR(36) NOT NULL,
+	username VARCHAR(100) NOT NULL,
+	content VARCHAR(200) NOT NULL,
+	creation_date TIMESTAMP NOT NULL,
+	like_count MEDIUMINT NOT NULL DEFAULT 0,
+	FOREIGN KEY (post_id)
+	REFERENCES post(id) ON DELETE CASCADE
+);

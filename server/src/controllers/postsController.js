@@ -16,12 +16,7 @@ async function getPostList(req, res) {
     SELECT COUNT(*) AS cnt
     FROM post
     WHERE title LIKE ?`;
-  const query = `
-    SELECT id, username, title, SUBSTRING(content, 1, 20) AS content, DATE_FORMAT(creation_date, '%Y-%m-%d %H:%i:%s') AS creation_date, like_count
-    FROM post
-    WHERE title LIKE ?
-    ORDER BY creation_date DESC
-    LIMIT 5 OFFSET ?`;
+  const query = `SELECT id, username, title, SUBSTRING(content, 1, 20) AS content, DATE_FORMAT(creation_date, '%Y-%m-%d %H:%i:%s') AS creation_date, like_count FROM post WHERE title LIKE ? ORDER BY creation_date DESC LIMIT 5 OFFSET ?`;
 
   try {
     const [totalPostCount] = await executeQuery(connection, totalPostQuery, [searchParams]);
@@ -29,7 +24,8 @@ async function getPostList(req, res) {
 
     if (pageNum > totalpageCount) throw new Error("잘못된 페이지 번호입니다.");
 
-    const [rows] = await executeQuery(connection, query, [searchParams, (pageNum - 1) * 5]);
+    const [rows] = await executeQuery(connection, query, [searchParams, `${(pageNum - 1) * 5}`]);
+    console.log(rows);
     res.status(200).json({
       totalPageCount: totalpageCount,
       data: rows,

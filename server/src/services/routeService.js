@@ -1,5 +1,5 @@
 import { getStations } from "./stationService.js";
-import { getTime, truncateToNearestTen } from "../services/timeService.js";
+import { getTime, getNextDay, adjustTime } from "../services/timeService.js";
 import { getConnection, executeQuery, endConnection } from "../services/databaseService.js";
 
 // 최근 경로 저장하는 함수
@@ -7,7 +7,7 @@ async function saveRecentRoute(req, startStation, endStation) {
   const recentRoutes = req.session.recentRoutes || [];
 
   // 최근 검색 경로 중복 방지
-  const isLatestRoute = recentRoutes[0].startStation === startStation && recentRoutes[0].endStation === endStation;
+  const isLatestRoute = recentRoutes[0]?.startStation === startStation && recentRoutes[0]?.endStation === endStation;
 
   if (!isLatestRoute) {
     recentRoutes.unshift({ startStation, endStation });
@@ -67,30 +67,40 @@ async function getRouteAndDirection(startStation, endStation) {
 
 // 경로별 디테일 정보 DB에서 가져오는 함수
 async function getRouteDetail(route, direction) {
-  let { day, arrivalHour, arrivalMin } = getTime();
-
+  let { actualDay, actualHour, actualMin } = getTime();
   const routeInfo = [];
-
   const connection = await getConnection();
-  const query = `SELECT * FROM station s JOIN train t ON s.id = t.station_id JOIN car c ON t.id = c.train_id WHERE s.station_name = ? AND t.direction = ? AND t.arrival_day = ? AND t.arrival_hour = ? AND t.arrival_min = ?`;
+  const query = `
+    SELECT * FROM station AS s
+    JOIN train AS t
+    ON s.id = t.station_id
+    JOIN statistics AS stat ON t.id = stat.train_id
+    WHERE s.station_name = ? AND t.direction = ? AND t.arrival_day = ? AND t.arrival_hour = ? AND t.arrival_min = ?`;
 
   for (const station of route) {
-    // const params = [station, direction, day, arrivalHour, roundDownToNearestTen(arrivalMin)];
-    const params = [station, direction, "MON", 8, truncateToNearestTen(arrivalMin)]; // 테스트 입력값
+    const { arrivalDay, arrivalHour, arrivalMin } = adjustTime(actualDay, actualHour, actualMin);
+    const params = [station, direction, arrivalDay, arrivalHour, arrivalMin];
     const [rows, fields] = await executeQuery(connection, query, params);
 
-    routeInfo.push(rows);
+    routeInfo.push(...rows);
 
-    // 시간 대 바뀌기 전까지(8시, 13시 데이터만 있기 때문)
-    if (arrivalMin / 10 <= 5) {
-      // 내외선에 맞는 역 간 소요시간(초 / 60 => 분) 더해줌
-      arrivalMin += direction ? rows[0].next_station_time / 60 : rows[0].prev_station_time / 60;
+    actualMin += direction ? rows[0].next_station_time / 60 : rows[0].prev_station_time / 60;
+
+    if (actualMin >= 60) {
+      actualMin %= 60;
+      actualHour += 1;
+    }
+
+    if (actualHour >= 24) {
+      actualHour %= 24;
+      actualDay = getNextDay(actualDay);
     }
   }
 
   await endConnection(connection);
-
   return routeInfo;
 }
+
+// console.log("routeinfo", await getRouteDetail(["시청", "을지로입구", "을지로3가", "을지로4가", "동대문역사문화공원", "신당"], 1));
 
 export { saveRecentRoute, getRouteAndDirection, getRouteDetail };
