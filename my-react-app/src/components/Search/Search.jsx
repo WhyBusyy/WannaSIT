@@ -133,7 +133,6 @@ function Search() {
       .get("/stations/recent-routes")
       .then((response) => {
         setSearchHistory(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error("Error:", error);
