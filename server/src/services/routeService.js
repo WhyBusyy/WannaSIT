@@ -7,7 +7,7 @@ async function saveRecentRoute(req, startStation, endStation) {
   const recentRoutes = req.session.recentRoutes || [];
 
   // 최근 검색 경로 중복 방지
-  const isLatestRoute = recentRoutes[0].startStation === startStation && recentRoutes[0].endStation === endStation;
+  const isLatestRoute = recentRoutes[0]?.startStation === startStation && recentRoutes[0]?.endStation === endStation;
 
   if (!isLatestRoute) {
     recentRoutes.unshift({ startStation, endStation });
@@ -82,7 +82,7 @@ async function getRouteDetail(route, direction) {
     const params = [station, direction, arrivalDay, arrivalHour, arrivalMin];
     const [rows, fields] = await executeQuery(connection, query, params);
 
-    routeInfo.push(rows);
+    routeInfo.push(...rows);
 
     actualMin += direction ? rows[0].next_station_time / 60 : rows[0].prev_station_time / 60;
 
