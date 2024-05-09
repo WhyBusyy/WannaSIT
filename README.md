@@ -3,7 +3,7 @@
 
 ![0](https://github.com/ohjmi/WannaSIT/assets/114122230/bc9ccf47-a872-4b85-8b6f-24aa8e71a925)
 ##### 배포 Url: https://www.angosipda.site/
-##### 프로젝트 기획서: https://drive.google.com/file/d/1UQ1c1y4CZ_RFx_GveE-aG6iurz4nl7pY/view?usp=drive_link
+##### 프로젝트 PPT : [Uploading ANGO.pdf…]()
 
 &nbsp;
 &nbsp;
